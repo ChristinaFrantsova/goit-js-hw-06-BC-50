@@ -16,8 +16,6 @@ createBtn.addEventListener("click", () => {
   createBoxes(amount);
 });
 
-destroyBtn.addEventListener("click", destroyBoxes);
-
 let startSize = 30;
 
 function createBoxes(amount) {
@@ -33,9 +31,14 @@ function createBoxes(amount) {
   }
 }
 
+destroyBtn.addEventListener("click", destroyBoxes());
+
 function destroyBoxes() {
-  boxesEl.innerHTML("");
+  boxesEl.innerHTML = "";
+  startSize = 0;
+  inputEl.value = "";
 }
+
 // const destroyBoxes = (event) => (boxesEl.innerHTML = "");
 // ===============1==========
 
